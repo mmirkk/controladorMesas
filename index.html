@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controlador de Mesas Electorales - Zárate</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>🗳️ Controlador de Mesas Electorales</h1>
+            <div class="user-info">
+                <span>Usuario: <strong id="user-name"></strong></span>
+                <button onclick="cambiarUsuario()" class="btn-cambiar-usuario">Cambiar Usuario</button>
+            </div>
+        </div>
+        
+        <div class="stats">
+            <div class="stat">
+                <span class="stat-number" id="total-mesas">0</span>
+                <span class="stat-label">Total Mesas</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="completadas">0</span>
+                <span class="stat-label">Completadas</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="en-proceso">0</span>
+                <span class="stat-label">En Proceso</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="pendientes">0</span>
+                <span class="stat-label">Pendientes</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="con-problemas">0</span>
+                <span class="stat-label">Con Problemas</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number" id="porcentaje-completadas">0%</span>
+                <span class="stat-label">% Finalizadas</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="filters">
+            <input type="text" id="search-input" placeholder="Buscar por establecimiento o mesa...">
+            <select id="filter-status">
+                <option value="todos">Todos los estados</option>
+                <option value="pendiente">Pendientes</option>
+                <option value="en-proceso">En Proceso</option>
+                <option value="completado">Completadas</option>
+                <option value="con-problemas">Con Problemas</option>
+            </select>
+            <button id="export-btn">📁 Exportar Estado</button>
+        </div>
+
+        <div class="table-container">
+            <table id="mesas-table">
+                <thead>
+                    <tr>
+                        <th>Partido</th>
+                        <th>Establecimiento</th>
+                        <th>Mesa</th>
+                        <th>Estado</th>
+                        <th>Observaciones</th>
+                        <th>Acciones Rápidas</th>
+                    </tr>
+                </thead>
+                <tbody id="mesas-tbody">
+                    <!-- Las filas se generarán dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal para observaciones -->
+    <div id="observaciones-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Observaciones - Mesa <span id="modal-mesa"></span></h3>
+            <textarea id="observaciones-textarea" placeholder="Escriba sus observaciones aquí..." rows="5"></textarea>
+            <div class="modal-actions">
+                <button id="save-observaciones" class="btn btn-success">Guardar</button>
+                <button id="cancel-observaciones" class="btn btn-secondary">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script_multiuser_clean.js"></script>
+</body>
+</html>
