@@ -1,6 +1,6 @@
 # 🗳️ Controlador de Mesas Electorales
 
-Aplicación web para el control y seguimiento del recuento de votos durante las elecciones en Zárate. Permite gestionar el estado de las mesas electorales, agregar observaciones y exportar reportes.
+Aplicación web para el control y seguimiento del recuento de votos durante las elecciones. Permite gestionar el estado de las mesas electorales, agregar observaciones y exportar reportes.
 
 ## 💾 Almacenamiento de Datos
 
